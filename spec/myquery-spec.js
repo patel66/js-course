@@ -22,7 +22,7 @@ describe("myQuery", function () {
   });
 
   describe("General each function", function () {
-    xit("iterates through an array", function () {
+    it("iterates through an array", function () {
       var testResult = [];
       var someArray = [10, 20, 30];
       $.each(someArray, function (number) {
