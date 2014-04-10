@@ -49,7 +49,7 @@ describe("myQuery", function () {
       expect(buttons.get(1).className).toMatch(/second/);
     });
 
-                                  xit("selects elements by tag name", function() {
+    it("selects elements by tag name", function() {
       var anchors = $('a');
       expect(anchors.length).toEqual(2)
       expect(anchors.get(0).className).toEqual("button second");

@@ -25,6 +25,9 @@
       var element = document.getElementsByClassName(selector.slice(1));
       elementsArr = element;
     }
+    else{
+      elementsArr = document.getElementsByTagNames(selector);
+    }
 
     // debugger;
     return new QueryWrapper(elementsArr);
