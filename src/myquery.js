@@ -2,11 +2,32 @@
 
   var QueryWrapper = function (elems) {
     // TODO
+    this.get = function(index){
+      return elems[index];
+    }
+    // debugger;
+    this.each = function (func){
+      for(i=0; i < elems.length; i++){
+        func(elems[i], i);
+      }
+    }
   };
 
   var myQuery = function (selector) {
     // TODO
+    var elementsArr;
+    if(selector[0] === '#'){
 
+      elementsArr = [document.getElementById(selector.slice(1))];
+    }
+    else if(selector[0] === '.'){
+
+      var element = document.getElementsByClassName(selector.slice(1));
+      elementsArr = element;
+    }
+
+    // debugger;
+    return new QueryWrapper(elementsArr);
   };
 
   window.$ = myQuery;
@@ -18,8 +39,7 @@
         func(array[i]);
       }
       return func;
-  }
-
+  };
 
 
 
