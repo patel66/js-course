@@ -78,7 +78,7 @@ describe("myQuery", function () {
     // TODO: Write tests for .show() and .hide()
     it("can show the element", function(){
       var buttons = $('.button').show();
-      expect(buttons.get(0).style.display).toEqual("block");
+      expect(buttons.get(0).style.display).toEqual("");
     });
 
     it("can hide the element", function(){
@@ -90,13 +90,19 @@ describe("myQuery", function () {
 
   describe("addClass", function () {
     // TODO: Write tests for addClass
+    it("can add a class", function(){
+      var label = $('label').addClass('click');
+      expect(label.get(0).className).toMatch('click')
+    })
+
     // HINT: Test using .toMatch() like the selector test
   });
 
   describe("Modifying CSS", function () {
 
-    xit("can set a single property", function() {
+    it("can set a single property", function() {
       // Ensure they're not already hidden
+      $('.button').show();
       expect( $('.button').get(0).style.display ).toEqual('');
       expect( $('.button').get(1).style.display ).toEqual('');
 
@@ -107,7 +113,11 @@ describe("myQuery", function () {
     });
 
     // TODO: (`it` without a function are pending tests)
-    it("can set multiple properties in one call");
+    it("can set multiple properties in one call", function(){
+      $('.button').css({'display': 'none', 'color', 'blue'})
+      expect($('.button').get(0).style.display).toEqual('none');
+      expect($('.button').get(0).style.color).toEqual('blue');
+    });
   });
 
 });

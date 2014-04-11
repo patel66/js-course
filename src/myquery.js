@@ -16,7 +16,7 @@
 
     this.show = function(){
         this.each(function(elem){
-          elem.style.display = "block";
+          elem.style.display = '';
         })
        return this;
     };
@@ -28,6 +28,32 @@
        })
       return this;
     };
+
+    this.addClass = function(name){
+      this.each(function(elem){
+        // debugger;
+        elem.className = name;
+      })
+      return this;
+    }
+
+    this.css = function(prop, change){
+
+      if(typeof(prop) === 'object'){
+        for p in prop{
+          this.each(function(elem){
+            elem.style[p] = prop[p];
+          })
+        }
+      }
+      else{
+        this.each(function(elem){
+          debugger;
+          elem.style[prop] = change;
+        })
+      }
+      return this;
+    }
 
     return this;
   };
