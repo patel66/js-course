@@ -76,6 +76,16 @@ describe("myQuery", function () {
 
   describe("Show and Hide", function () {
     // TODO: Write tests for .show() and .hide()
+    it("can show the element", function(){
+      var buttons = $('.button').show();
+      expect(buttons.get(0).style.display).toEqual("block");
+    });
+
+    it("can hide the element", function(){
+      var buttons = $(".button").hide();
+      expect(buttons.get(0).style.display).toEqual("none");
+    });
+
   });
 
   describe("addClass", function () {

@@ -4,13 +4,32 @@
     // TODO
     this.get = function(index){
       return elems[index];
-    }
+    };
     // debugger;
     this.each = function (func){
       for(i=0; i < elems.length; i++){
         func(elems[i], i);
       }
-    }
+    };
+
+    this.length = elems.length;
+
+    this.show = function(){
+        this.each(function(elem){
+          elem.style.display = "block";
+        })
+       return this;
+    };
+
+    this.hide = function(){
+      this.each(function(elem){
+        elem.style.display = "none";
+
+       })
+      return this;
+    };
+
+    return this;
   };
 
   var myQuery = function (selector) {
@@ -26,8 +45,9 @@
       elementsArr = element;
     }
     else{
-      elementsArr = document.getElementsByTagNames(selector);
+      elementsArr = document.getElementsByTagName(selector);
     }
+    // debugger;
 
     // debugger;
     return new QueryWrapper(elementsArr);
