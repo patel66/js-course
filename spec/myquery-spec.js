@@ -114,7 +114,7 @@ describe("myQuery", function () {
 
     // TODO: (`it` without a function are pending tests)
     it("can set multiple properties in one call", function(){
-      $('.button').css({'display': 'none', 'color', 'blue'})
+      $('.button').css({'display': 'none', 'color': 'blue'})
       expect($('.button').get(0).style.display).toEqual('none');
       expect($('.button').get(0).style.color).toEqual('blue');
     });

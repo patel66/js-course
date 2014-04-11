@@ -40,20 +40,20 @@
     this.css = function(prop, change){
 
       if(typeof(prop) === 'object'){
-        for p in prop{
+        for (var p in prop) {
           this.each(function(elem){
             elem.style[p] = prop[p];
           })
-        }
+        };
       }
       else{
         this.each(function(elem){
-          debugger;
+          // debugger;
           elem.style[prop] = change;
         })
       }
       return this;
-    }
+    };
 
     return this;
   };
